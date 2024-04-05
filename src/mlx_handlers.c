@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mlx_handlers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 15:16:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/05 17:36:46 by gholloco         ###   ########.fr       */
+/*   Created: 2024/04/05 13:17:35 by gholloco          #+#    #+#             */
+/*   Updated: 2024/04/05 15:34:02 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-
-int	main(int argc, char **argv)
+int	handle_no_event(void *data)
 {
-	t_data data;
+	return (0);
+}
 
-	if (!start_mlx(&data))
-		return (0);
+int	handle_X(t_data *data)
+{
+	free_then_exit(data);
+	return (0);
+}
+
+int	handle_key_event(int keysym, t_data *data)
+{
+	if (keysym == XK_Escape)
+	{
+		free_then_exit(data);
+	}
+	return (0);
 }

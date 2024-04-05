@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/04/04 17:06:08 by gholloco         ###   ########.fr        #
+#    Updated: 2024/04/05 17:36:35 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 
 SRC_DIR = src
 
-SOURCES = main.c
+SOURCES = free.c main.c mlx.c mlx_handlers.c utils.c
 
 OBJ_DIR = obj
 

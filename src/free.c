@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 15:16:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/05 17:36:46 by gholloco         ###   ########.fr       */
+/*   Created: 2024/04/05 15:32:59 by gholloco          #+#    #+#             */
+/*   Updated: 2024/04/05 15:33:14 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-
-int	main(int argc, char **argv)
+void	free_then_exit(t_data *data)
 {
-	t_data data;
-
-	if (!start_mlx(&data))
-		return (0);
+	mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
+	exit(0);
 }
