@@ -6,13 +6,21 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:34:05 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/05 17:52:59 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:21:42 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-void	rn(t_img *img, int x, int y, int color)
+void	img_pix_put_old(t_img *img, int x, int y, int color)
+{
+	char    *pixel;
+
+	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*(int *)pixel = color;
+}
+
+void	img_pix_put(t_img *img, int x, int y, int color)
 {
     char    *pixel;
     int		i;

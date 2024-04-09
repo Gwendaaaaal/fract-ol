@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:17:31 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/05 17:36:50 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:28:05 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 # define WIDTH 1600
 # define HEIGHT 900
+# define MAX_ITER 50
 # include "minilibx-linux/mlx.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -38,6 +39,10 @@ typedef struct s_data
 	t_img	img;
 	int		x;
 	int		y;
+	double	zx;
+	double	zy;
+	double	cx;
+	double	cy;
 	char	*query;
 }	t_data;
 
