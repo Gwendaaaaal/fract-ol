@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/04/05 17:36:35 by gholloco         ###   ########.fr        #
+#    Updated: 2024/04/10 19:36:06 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 
 SRC_DIR = src
 
-SOURCES = free.c main.c mlx.c mlx_handlers.c utils.c
+SOURCES = draw.c event_handlers.c free.c init.c main.c parse.c utils.c 
 
 OBJ_DIR = obj
 
@@ -32,7 +32,7 @@ MLX = $(MLX_DIR)/libmlx.a
 
 CC = cc
 
-CFLAGS = -g
+CFLAGS = -g -lm
 
 MLX_FLAGS = -lmlx -lXext -lX11
 

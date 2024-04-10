@@ -6,35 +6,44 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:34:05 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/09 15:21:42 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:46:16 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-void	img_pix_put_old(t_img *img, int x, int y, int color)
+float	ft_atof(char *string)
 {
-	char    *pixel;
+	float	number;
+	int		left_part;
+	int		right_part;
+	char	**parts;
 
-	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
-	*(int *)pixel = color;
+	number = 0;
+	parts = ft_split(string, '.');
+	left_part = ft_atoi(parts[0]);
+	right_part = ft_atoi(parts[1]);
+	number += (float) left_part;
+	if (number >= 0)
+		number += (float) right_part / (float) (pow(10, ft_strlen(parts[1])));
+	else
+		number -= (float) right_part / (float) (pow(10, ft_strlen(parts[1])));
+	return (number);
 }
 
 void	img_pix_put(t_img *img, int x, int y, int color)
 {
-    char    *pixel;
-    int		i;
+	char	*pixel;
+	int		i;
 
-    i = img->bpp - 8;
-    pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
-    while (i >= 0)
-    {
-        /* big endian, MSB is the leftmost bit */
-        if (img->endian != 0)
-            *pixel++ = (color >> i) & 0xFF;
-        /* little endian, LSB is the leftmost bit */
-        else
-            *pixel++ = (color >> (img->bpp - 8 - i)) & 0xFF;
-        i -= 8;
-    }
+	i = img->bpp - 8;
+	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	while (i >= 0)
+	{
+		if (img->endian != 0)
+			*pixel++ = (color >> i) & 0xFF;
+		else
+			*pixel++ = (color >> (img->bpp - 8 - i)) & 0xFF;
+		i -= 8;
+	}
 }
