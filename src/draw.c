@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:30:29 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 13:44:07 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:34:27 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 #include <float.h>
 
 void	draw_mandelbrot(t_data *data)
@@ -45,8 +45,8 @@ void	draw_julia(t_data *data)
 	data->zy = (data->y / data->zoom) + data->offset_y;
 	if (!data->cx && !data->cy)
 	{
-		data->cx = 0.285;
-		data->cy = 0.013;
+		data->cx = 0.400;
+		data->cy = 0.20;
 	}
 	while (++i < MAX_ITER && data->zx * data->zx + data->zy * data->zy <= 4)
 	{

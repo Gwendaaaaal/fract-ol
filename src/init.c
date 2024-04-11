@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:49:50 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/10 18:56:44 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:53:25 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 int	init_mlx(t_data *data)
 {

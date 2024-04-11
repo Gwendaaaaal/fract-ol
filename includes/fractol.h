@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:17:31 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 13:49:00 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:37:45 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ float	ft_atof(char *string);
 double	ft_pow(double n1, double n2);
 double	ft_abs(double n1);
 void	img_pix_put(t_img *img, int x, int y, int color);
+void	help(void);
 
 #endif

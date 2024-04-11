@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:17:35 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 13:46:00 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:53:06 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 int	handle_x(t_data *data)
 {

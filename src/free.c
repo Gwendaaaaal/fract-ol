@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:32:59 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/09 15:48:54 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:53:18 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 void	free_then_exit(t_data *data)
 {

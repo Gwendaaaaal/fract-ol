@@ -6,29 +6,34 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:34:05 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 13:43:46 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:32:26 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 float	ft_atof(char *string)
 {
 	float	number;
 	int		left_part;
-	int		right_part;
-	char	**parts;
+	int		dec_part;
+	char	*right_part;
 
 	number = 0;
-	parts = ft_split(string, '.');
-	left_part = ft_atoi(parts[0]);
-	right_part = ft_atoi(parts[1]);
+	left_part = ft_atoi(string);
 	number += (float) left_part;
+	right_part = ft_strchr(string, '.') + 1;
+	if (!(right_part - 1))
+		return (number);
+	dec_part = ft_atoi(right_part);
 	if (number >= 0)
-		number += (float) right_part / (float)(ft_pow(10, ft_strlen(parts[1])));
+		number += (float) dec_part / (float)(ft_pow(10, ft_strlen(right_part)));
 	else
-		number -= (float) right_part / (float)(ft_pow(10, ft_strlen(parts[1])));
-	return (number);
+		number -= (float) dec_part / (float)(ft_pow(10, ft_strlen(right_part)));
+	if (ft_strchr(string, '-'))
+		return (number * -1);
+	else
+		return (number);
 }
 
 double	ft_pow(double n1, double n2)
@@ -68,4 +73,15 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 			*pixel++ = (color >> (img->bpp - 8 - i)) & 0xFF;
 		i -= 8;
 	}
+}
+
+void	help(void)
+{
+	ft_printf("Availables fractals are : julia, mandelbrot and burning-ship\n\n");
+	ft_printf("Usage exemples :\n\n");
+	ft_printf("./fractol julia\n");
+	ft_printf("./fractol mandelbrot\n");
+	ft_printf("./fractol burning-ship\n\n");
+	ft_printf("For julia set, you can enter 2 floats :\n\n");
+	ft_printf("./fractol julia 0.285 0.013\n");
 }
