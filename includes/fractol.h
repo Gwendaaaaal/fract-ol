@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:17:31 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 15:47:47 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 17:36:45 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef struct s_data
 
 // draw.c
 void	draw_mandelbrot(t_data *data);
+void	draw_julia(t_data *data);
+void	draw_burning_ship(t_data *data);
 int		draw_fractal(t_data *data);
 
 // event_handlers.c
@@ -82,6 +84,8 @@ void	init_data(t_data *data);
 int		init_mlx(t_data *data);
 
 // parse.c
+int		is_float(char *string);
+int		get_julia_args(char **argv, t_data *data);
 int		parse(int argc, char **argv, t_data *data);
 
 // utils.c
