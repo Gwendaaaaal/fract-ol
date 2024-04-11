@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/04/11 13:50:29 by gholloco         ###   ########.fr        #
+#    Updated: 2024/04/11 17:01:30 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ MLX = $(MLX_DIR)/libmlx.a
 
 CC = cc
 
-CFLAGS = -g
+CFLAGS = -g -Wall -Werror -Wextra
 
 MLX_FLAGS = -lmlx -lXext -lX11
 
