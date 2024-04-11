@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:49:50 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 13:53:25 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:43:55 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	init_data(t_data *data)
 {
 	data->color = 0x0A0A0A;
 	data->zoom = (float) HEIGHT / 2.0;
-	data->cx = 0.0;
-	data->cy = 0.0;
+	data->cx = -500.00;
+	data->cy = -500.00;
 	data->offset_x = -2.5;
 	data->offset_y = -1.0;
 }

@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:23:44 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 15:31:47 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:20:50 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	is_float(char *string)
 	int	i;
 
 	i = 0;
+	if (ft_strchr(string, '.') != ft_strrchr(string, '.'))
+		return (0);
 	if (string[i] == '-' || string[i] == '+')
 		i++;
 	while (string[i])

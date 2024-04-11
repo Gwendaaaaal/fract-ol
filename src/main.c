@@ -6,11 +6,12 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:16:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 14:49:08 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:21:06 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include <float.h>
 
 int	main(int argc, char **argv)
 {

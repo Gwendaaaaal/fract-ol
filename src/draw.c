@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:30:29 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 14:34:27 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:27:13 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	draw_julia(t_data *data)
 	i = -1;
 	data->zx = (data->x / data->zoom) + data->offset_x;
 	data->zy = (data->y / data->zoom) + data->offset_y;
-	if (!data->cx && !data->cy)
+	if (data->cx == -500.00 && data->cy == -500.00)
 	{
 		data->cx = 0.400;
 		data->cy = 0.20;
