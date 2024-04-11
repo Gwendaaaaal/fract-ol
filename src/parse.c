@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:23:44 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/10 19:56:03 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:26:28 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	parse(int argc, char **argv, t_data *data)
 		{
 			data->cx = ft_atof(argv[2]);
 			data->cy = ft_atof(argv[3]);
-			// printf("data->cx = %lf data->cy = %lf \n", data->cx, data->cy);
 		}
 		return (1);
 	}

@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/04/10 19:36:06 by gholloco         ###   ########.fr        #
+#    Updated: 2024/04/11 13:50:29 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,17 @@ OBJECT = $(SOURCES:.c=.o)
 
 OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJECT))
 
-LIBFT_DIR = ./Libft
+LIBFT_DIR = ./includes/Libft
 
 LIBFT = $(LIBFT_DIR)/libft.a
 
-MLX_DIR = ./minilibx-linux
+MLX_DIR = ./includes/minilibx-linux
 
 MLX = $(MLX_DIR)/libmlx.a
 
 CC = cc
 
-CFLAGS = -g -lm
+CFLAGS = -g
 
 MLX_FLAGS = -lmlx -lXext -lX11
 

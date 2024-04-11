@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:30:29 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/10 19:56:10 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:44:07 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,17 @@ void	draw_burning_ship(t_data *data)
 	while (++i < MAX_ITER && data->zx * data->zx + data->zy * data->zy <= 4)
 	{
 		temp = data->zx;
-		data->zx = fabs(data->zx * data->zx - data->zy * data->zy + data->cx);
-		data->zy = fabs(2. * temp * data->zy) + data->cy;
+		data->zx = ft_abs(data->zx * data->zx - data->zy * data->zy + data->cx);
+		data->zy = ft_abs(2. * temp * data->zy) + data->cy;
 	}
 	if (i == MAX_ITER)
 		img_pix_put(&data->img, data->x, data->y, 0x000000);
 	else
 		img_pix_put(&data->img, data->x, data->y, data->color * i);
 }
+
 int	draw_fractal(t_data *data)
 {
-	// mlx_clear_window(data->mlx, data->win);
 	data->x = 0;
 	data->y = 0;
 	while (data->y < HEIGHT)
