@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:23:44 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 16:20:50 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:51:02 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,10 @@ int	parse(int argc, char **argv, t_data *data)
 		return (1);
 	}
 	else if (ft_strncmp(argv[1], "mandelbrot", 11) == 0 && argc == 2)
-	{
-		data->query = "mandelbrot";
-		return (1);
-	}
+		return (data->query = "mandelbrot", 1);
 	else if (ft_strncmp(argv[1], "burning-ship", 13) == 0 && argc == 2)
-	{
-		data->query = "burning-ship";
-		return (1);
-	}
+		return (data->query = "burning-ship", 1);
+	else if (ft_strncmp(argv[1], "tricorn", 8) == 0 && argc == 2)
+		return (data->query = "tricorn", 1);
 	return (help(), 0);
 }

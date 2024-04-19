@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:30:29 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/19 15:06:52 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:46:46 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,33 @@ void	draw_mandelbrot(t_data *data)
 	data->zy = 0.0;
 	data->cx = (data->x / data->zoom) + data->offset_x;
 	data->cy = (data->y / data->zoom) + data->offset_y;
-	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy <= 4)
+	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy < 4)
 	{
 		temp = data->zx;
 		data->zx = data->zx * data->zx - data->zy * data->zy + data->cx;
 		data->zy = 2. * temp * data->zy + data->cy;
+	}
+	if (i == data->max_itr)
+		img_pix_put(&data->img, data->x, data->y, 0x000000);
+	else
+		img_pix_put(&data->img, data->x, data->y, data->color * i);
+}
+
+void	draw_tricorn(t_data *data)
+{
+	int		i;
+	double	temp;
+
+	i = -1;
+	data->zx = 0.0;
+	data->zy = 0.0;
+	data->cx = (data->x / data->zoom) + data->offset_x;
+	data->cy = (data->y / data->zoom) + data->offset_y;
+	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy < 4)
+	{
+		temp = data->zx;
+		data->zx = data->zx * data->zx - data->zy * data->zy + data->cx;
+		data->zy = -2. * temp * data->zy + data->cy;
 	}
 	if (i == data->max_itr)
 		img_pix_put(&data->img, data->x, data->y, 0x000000);
@@ -48,7 +70,7 @@ void	draw_julia(t_data *data)
 		data->cx = 0.400;
 		data->cy = 0.20;
 	}
-	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy <= 4)
+	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy < 4)
 	{
 		temp = data->zx;
 		data->zx = data->zx * data->zx - data->zy * data->zy + data->cx;
@@ -70,7 +92,7 @@ void	draw_burning_ship(t_data *data)
 	data->zy = 0.0;
 	data->cx = (data->x / data->zoom) + data->offset_x;
 	data->cy = (data->y / data->zoom) + data->offset_y;
-	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy <= 4)
+	while (++i < data->max_itr && data->zx * data->zx + data->zy * data->zy < 4)
 	{
 		temp = data->zx;
 		data->zx = ft_abs(data->zx * data->zx - data->zy * data->zy + data->cx);
@@ -92,6 +114,8 @@ int	draw_fractal(t_data *data)
 		{
 			if (ft_strncmp(data->query, "mandelbrot", 11) == 0)
 				draw_mandelbrot(data);
+			else if (ft_strncmp(data->query, "tricorn", 8) == 0)
+				draw_tricorn(data);
 			else if (ft_strncmp(data->query, "julia", 6) == 0)
 				draw_julia(data);
 			else if (ft_strncmp(data->query, "burning-ship", 13) == 0)

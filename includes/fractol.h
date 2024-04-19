@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:17:31 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/19 15:06:46 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:46:08 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_data
 
 // draw.c
 void	draw_mandelbrot(t_data *data);
+void	draw_tricorn(t_data *data);
 void	draw_julia(t_data *data);
 void	draw_burning_ship(t_data *data);
 int		draw_fractal(t_data *data);

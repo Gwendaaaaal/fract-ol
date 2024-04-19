@@ -1,10 +1,11 @@
-Availables fractals are : julia, mandelbrot and burning-ship
+Availables fractals are : burning-ship, julia, mandelbrot and tricorn
 
 Usage exemples :
 
+./fractol burning-ship
 ./fractol julia
 ./fractol mandelbrot
-./fractol burning-ship
+./fractol tricorn
 
 For julia set, you can enter 2 floats :
 

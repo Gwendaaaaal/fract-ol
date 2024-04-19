@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:34:05 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/19 15:34:15 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:20:49 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 void	help(void)
 {
-	ft_printf("Availables fractals are : julia, mandelbrot and burning-ship\n\n");
+	ft_printf("Availables fractals are : burning-ship, julia, mandelbrot");
+	ft_printf(" and tricorn\n\n");
 	ft_printf("Usage exemples :\n\n");
+	ft_printf("./fractol burning-ship\n");
 	ft_printf("./fractol julia\n");
 	ft_printf("./fractol mandelbrot\n");
-	ft_printf("./fractol burning-ship\n\n");
+	ft_printf("./fractol tricorn\n\n");
 	ft_printf("For julia set, you can enter 2 floats :\n\n");
 	ft_printf("./fractol julia 0.285 0.013\n\n");
 	ft_printf("Availables commands are :\n\n");
