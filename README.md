@@ -4,7 +4,7 @@ Usage exemples :
 
 ./fractol burning-ship
 
-./fractol mandelbrot
+./fractol julia
 
 For julia set, you can enter 2 floats :
 
