@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:17:35 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 13:53:06 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:47:02 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,19 @@ int	handle_key_event(int key, t_data *data)
 		data->offset_x += 100 / data->zoom;
 	else if (key == ARROW_DOWN || key == KEY_S)
 		data->offset_y += 100 / data->zoom;
-	draw_fractal(data);
-	return (0);
+	else if (key == KEY_I && data->color > 0x000033)
+		data->color *= 0.62;
+	else if (key == KEY_O && data->color < 0xFFFFDD)
+		data->color /= 0.62;
+	else if (key == KEY_K && data->max_iter < 300)
+		data->max_iter += 30;
+	else if (key == KEY_L && data->max_iter > 30)
+		data->max_iter -= 30;
+	else if (key == KEY_COMMA && ft_strncmp(data->query, "julia", 6) == 0)
+		data->cx += 0.008;
+	else if (key == KEY_DOT && ft_strncmp(data->query, "julia", 6) == 0)
+		data->cx -= 0.008;
+	return (draw_fractal(data), 0);
 }
 
 int	handle_mouse_event(int mouse_sym, int x, int y, t_data *data)

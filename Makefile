@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/04/11 17:01:30 by gholloco         ###   ########.fr        #
+#    Updated: 2024/04/17 14:24:59 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ CC = cc
 
 CFLAGS = -g -Wall -Werror -Wextra
 
-MLX_FLAGS = -lmlx -lXext -lX11
+MLX_FLAGS = -lX11 -lXext -lmlx
 
 RMFLAGS = -rf
 
@@ -52,19 +52,19 @@ $(OBJ_DIR) :
 	mkdir $(OBJ_DIR)
 
 $(LIBFT) :  
-	make -C $(LIBFT_DIR) bonus
+	make -sC $(LIBFT_DIR) bonus
 
 $(MLX) :
-	make -C $(MLX_DIR) 
+	make -sC $(MLX_DIR)
 
 clean :
 	rm $(RMFLAGS) $(OBJECTS) $(OBJECTS_CHECKER)
-	make -C $(LIBFT_DIR) clean 
-	make -C $(MLX_DIR) clean 
+	make -sC $(LIBFT_DIR) clean 
+	make -sC $(MLX_DIR) clean 
 
 fclean : clean
 	rm $(RMFLAGS) $(NAME) $(CHECKER)
-	make -C $(LIBFT_DIR) fclean
+	make -sC $(LIBFT_DIR) fclean
 
 re : fclean all
 

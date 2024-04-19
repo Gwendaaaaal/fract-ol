@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:17:31 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 17:36:45 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:56:56 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 // fract-ol settings
 # define WIDTH 1600
 # define HEIGHT 900
-# define MAX_ITER 50
 
 // keycodes
 # define ARROW_UP 65362
@@ -27,6 +26,12 @@
 # define KEY_S 115
 # define KEY_A 97
 # define KEY_D 100
+# define KEY_I 105
+# define KEY_O 111
+# define KEY_K 107
+# define KEY_L 108
+# define KEY_COMMA 44
+# define KEY_DOT 46
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
 
@@ -55,6 +60,7 @@ typedef struct s_data
 	int		x;
 	int		y;
 	int		color;
+	int		max_iter;
 	double	zoom;
 	double	offset_x;
 	double	offset_y;

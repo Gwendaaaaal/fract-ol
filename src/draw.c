@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:30:29 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 16:27:13 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:53:12 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	draw_mandelbrot(t_data *data)
 	data->zy = 0.0;
 	data->cx = (data->x / data->zoom) + data->offset_x;
 	data->cy = (data->y / data->zoom) + data->offset_y;
-	while (++i < MAX_ITER && data->zx * data->zx + data->zy * data->zy <= 4)
+	while (++i < data->max_iter && data->zx * data->zx + data->zy * data->zy <= 4)
 	{
 		temp = data->zx;
 		data->zx = data->zx * data->zx - data->zy * data->zy + data->cx;
 		data->zy = 2. * temp * data->zy + data->cy;
 	}
-	if (i == MAX_ITER)
+	if (i == data->max_iter)
 		img_pix_put(&data->img, data->x, data->y, 0x000000);
 	else
 		img_pix_put(&data->img, data->x, data->y, data->color * i);
@@ -48,13 +48,13 @@ void	draw_julia(t_data *data)
 		data->cx = 0.400;
 		data->cy = 0.20;
 	}
-	while (++i < MAX_ITER && data->zx * data->zx + data->zy * data->zy <= 4)
+	while (++i < data->max_iter && data->zx * data->zx + data->zy * data->zy <= 4)
 	{
 		temp = data->zx;
 		data->zx = data->zx * data->zx - data->zy * data->zy + data->cx;
 		data->zy = 2. * temp * data->zy + data->cy;
 	}
-	if (i == MAX_ITER)
+	if (i == data->max_iter)
 		img_pix_put(&data->img, data->x, data->y, 0x000000);
 	else
 		img_pix_put(&data->img, data->x, data->y, data->color * i);
@@ -70,13 +70,13 @@ void	draw_burning_ship(t_data *data)
 	data->zy = 0.0;
 	data->cx = (data->x / data->zoom) + data->offset_x;
 	data->cy = (data->y / data->zoom) + data->offset_y;
-	while (++i < MAX_ITER && data->zx * data->zx + data->zy * data->zy <= 4)
+	while (++i < data->max_iter && data->zx * data->zx + data->zy * data->zy <= 4)
 	{
 		temp = data->zx;
 		data->zx = ft_abs(data->zx * data->zx - data->zy * data->zy + data->cx);
 		data->zy = ft_abs(2. * temp * data->zy) + data->cy;
 	}
-	if (i == MAX_ITER)
+	if (i == data->max_iter)
 		img_pix_put(&data->img, data->x, data->y, 0x000000);
 	else
 		img_pix_put(&data->img, data->x, data->y, data->color * i);
