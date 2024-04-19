@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:17:31 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/19 12:56:56 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:06:46 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct s_data
 	int		x;
 	int		y;
 	int		color;
-	int		max_iter;
+	int		max_itr;
 	double	zoom;
 	double	offset_x;
 	double	offset_y;

@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:49:50 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/17 14:54:05 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:26:39 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	init_mlx(t_data *data)
 void	init_data(t_data *data)
 {
 	data->color = 0x0A0A0A;
-	data->max_iter = 61;
+	data->max_itr = 61;
 	data->zoom = (float) HEIGHT / 2.0;
 	data->cx = -500.00;
 	data->cy = -500.00;

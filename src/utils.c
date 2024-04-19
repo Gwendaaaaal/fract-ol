@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:34:05 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/11 15:32:26 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:34:15 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,11 @@ void	help(void)
 	ft_printf("./fractol mandelbrot\n");
 	ft_printf("./fractol burning-ship\n\n");
 	ft_printf("For julia set, you can enter 2 floats :\n\n");
-	ft_printf("./fractol julia 0.285 0.013\n");
+	ft_printf("./fractol julia 0.285 0.013\n\n");
+	ft_printf("Availables commands are :\n\n");
+	ft_printf("WASD - ARROWS : Move the view\n");
+	ft_printf("MOUSE WHEEL : Zoom in or out following the mouse position\n");
+	ft_printf("I - O : Change the color palette\n");
+	ft_printf("K - L : Increase or decrease the number of iterations\n");
+	ft_printf("COMMA - DOT : Increase or decrease the constants of Julia\n");
 }
